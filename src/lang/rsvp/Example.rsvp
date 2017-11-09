@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RSVP</title>
+</head>
+<body style="background-color: rgba(235, 235, 235, 1);">
+	<div id="main">
+		<h1>Ten Good Reasons to use Rascal</h1>
+		<ul>
+		<% {for(x <-[i | i <- [0..10]]) append
+		  %>
+		  <li><% x %>. It's awesome!
+		  <%
+		;}%>
+		</ul>
+	<div>
+	<div id="bottom">
+		The HTTP request looked like this: <% httpRequest %>
+		Parameters: <% httpRequest.parameters %>
+	</div>
+</body>
+</html>
