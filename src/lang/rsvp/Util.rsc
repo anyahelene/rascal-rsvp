@@ -7,7 +7,6 @@ import lang::rsvp::Rsvp;
 import lang::rascal::format::Escape;
 import String;
 
-
 public str applToStr(a:appl(p,_)) = "<prodToStr(p)> := \"<replaceAll(unparse(a),"\n","\\n")[..20]>\"";
 public str prodToStr(prod(s,as,_)) = "<printSymbol(s, true)> = <intercalate(", ", [printSymbol(a, true) | a <- as])>;";
 public str prodToStr(regular(s)) = "<printSymbol(s, true)>";
@@ -42,7 +41,7 @@ public str toAstStr((HtmlPart)`<HtmlDoctype dt><Htmls hs>`) {
 }
 
 public str toAstStr((Htmls)`<Html* hs>`) {
-	return intercalate("", [toAstStr(h) | h <- hs.args]);
+	return intercalate("", [toAstStr(h) | Html h <- hs.args]);
 }
 public str toAstStr(LAYOUTLIST l) = unparse(l);
 
